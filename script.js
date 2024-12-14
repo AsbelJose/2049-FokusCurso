@@ -6,22 +6,25 @@ const botonEnfoque = document.querySelector('.app__card-button--enfoque');
 const botonLargo = document.querySelector('.app__card-button--largo');
 const banner = document.querySelector('.app__image');
 
+// LOGICA
+function cambiarContexto (contexto) {
+    html.setAttribute('data-contexto',contexto);
+    banner.setAttribute('src', `./imagenes/${contexto}.png`);
+};
 
 //CAPTURA DE EVENTOS DEL DOM
 botonCorto.addEventListener('click', () => {
-    html.setAttribute('data-contexto', 'descanso-corto');
-    banner.setAttribute('src', './imagenes/descanso-corto.png');
+    cambiarContexto ('descanso-corto');
 });
 
 botonEnfoque.addEventListener('click', () => {
-    html.setAttribute('data-contexto', 'enfoque');
-    banner.setAttribute('src', './imagenes/enfoque.png');
+    cambiarContexto ('enfoque');
 
 });
 
 botonLargo.addEventListener('click', () => {
-    html.setAttribute('data-contexto', 'descanso-largo');
-    banner.setAttribute('src', './imagenes/descanso-largo.png');
+    cambiarContexto ('descanso-largo');
 
 });
+
 
